@@ -21,8 +21,6 @@ import logo from "assets/images/logo.svg";
 
 const Login = props => {
 
-  console.log(props, "props")
-
   //meta title
   document.title = "Merchent Login | Medimny";
 
@@ -41,10 +39,7 @@ const Login = props => {
       password: Yup.string().required("Please Enter Your Password"),
     }),
     onSubmit: (values) => {
-      console.log("ttttttttttt", values)
-      // dispatch(loginUser(values, props.router.navigate("/forgot-password")));
-      dispatch(loginUser(values, props.router.navigate(["/dashboard"])));
-
+      dispatch(loginUser(values, props.router.navigate));
     }
   });
 
